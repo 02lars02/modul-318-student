@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSearch = new System.Windows.Forms.Button();
-            this.datConnection = new System.Windows.Forms.DateTimePicker();
             this.cobEndstation = new System.Windows.Forms.ComboBox();
             this.lblEndStation = new System.Windows.Forms.Label();
             this.cobStartstation = new System.Windows.Forms.ComboBox();
@@ -49,14 +48,6 @@
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // datConnection
-            // 
-            this.datConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datConnection.Location = new System.Drawing.Point(11, 319);
-            this.datConnection.Name = "datConnection";
-            this.datConnection.Size = new System.Drawing.Size(260, 26);
-            this.datConnection.TabIndex = 5;
             // 
             // cobEndstation
             // 
@@ -87,6 +78,7 @@
             this.cobStartstation.Size = new System.Drawing.Size(260, 39);
             this.cobStartstation.TabIndex = 3;
             this.cobStartstation.DropDown += new System.EventHandler(this.cobStartstation_DropDown);
+            this.cobStartstation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cobStartstation_KeyDown);
             // 
             // lblStartstation
             // 
@@ -136,7 +128,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 431);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.datConnection);
             this.Controls.Add(this.cobEndstation);
             this.Controls.Add(this.lblEndStation);
             this.Controls.Add(this.cobStartstation);
@@ -154,7 +145,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DateTimePicker datConnection;
         private System.Windows.Forms.ComboBox cobEndstation;
         private System.Windows.Forms.Label lblEndStation;
         private System.Windows.Forms.ComboBox cobStartstation;

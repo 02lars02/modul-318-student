@@ -64,9 +64,17 @@ namespace TransportApp
                 //Substrings the String so, that only hh:mm will be shown
                 string departureTime = connection.From.Departure.Substring(11, 5);
                 string arrivalTime = connection.To.Arrival.Substring(11, 5);
+                //Gleis kann null sein !!!
 
                 libConnection.Items.Add(departureTime + "-" + arrivalTime + " Gleis " + connection.From.Platform);
             }
+        }
+
+        //not working!!!
+        private void cobStartstation_KeyDown(object sender, KeyEventArgs e)
+        {
+                cobStartstation_DropDown(sender, e);
+                cobStartstation.DroppedDown = true;
         }
     }
 }
