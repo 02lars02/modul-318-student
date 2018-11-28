@@ -1,6 +1,6 @@
 ﻿namespace TransportApp
 {
-    partial class Connectionsboard
+    partial class Anzeigetafel
     {
         /// <summary>
         /// Required designer variable.
@@ -43,16 +43,16 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 23);
             this.btnSearch.TabIndex = 18;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // cobStation
             // 
-            this.cobStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cobStation.FormattingEnabled = true;
             this.cobStation.Location = new System.Drawing.Point(11, 157);
             this.cobStation.Name = "cobStation";
-            this.cobStation.Size = new System.Drawing.Size(260, 47);
+            this.cobStation.Size = new System.Drawing.Size(260, 39);
             this.cobStation.TabIndex = 14;
             // 
             // lblStation
@@ -82,7 +82,7 @@
             this.btnConnectionboard.Name = "btnConnectionboard";
             this.btnConnectionboard.Size = new System.Drawing.Size(150, 27);
             this.btnConnectionboard.TabIndex = 11;
-            this.btnConnectionboard.Text = "Connectionboard";
+            this.btnConnectionboard.Text = "Anzeigetafel";
             this.btnConnectionboard.UseVisualStyleBackColor = true;
             // 
             // btnConnection
@@ -92,10 +92,10 @@
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(150, 27);
             this.btnConnection.TabIndex = 10;
-            this.btnConnection.Text = "Connection";
+            this.btnConnection.Text = "Verbindungen";
             this.btnConnection.UseVisualStyleBackColor = true;
             // 
-            // Connectionsboard
+            // Anzeigetafel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             this.Controls.Add(this.libConnectionsboard);
             this.Controls.Add(this.btnConnectionboard);
             this.Controls.Add(this.btnConnection);
-            this.Name = "Connectionsboard";
+            this.Name = "Anzeigetafel";
             this.Text = "Connectionsboard";
             this.ResumeLayout(false);
             this.PerformLayout();

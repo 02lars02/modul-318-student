@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TransportApp
 {
-    public partial class Connection : Form
+    public partial class Anzeigetafel : Form
     {
-        public Connection()
+        public Anzeigetafel()
         {
             InitializeComponent();
         }

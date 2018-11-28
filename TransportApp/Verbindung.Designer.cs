@@ -1,6 +1,6 @@
 ﻿namespace TransportApp
 {
-    partial class Connection
+    partial class Verbindung
     {
         /// <summary>
         /// Required designer variable.
@@ -45,9 +45,10 @@
             this.btnSearch.Location = new System.Drawing.Point(11, 372);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 23);
-            this.btnSearch.TabIndex = 18;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // datConnection
             // 
@@ -55,16 +56,17 @@
             this.datConnection.Location = new System.Drawing.Point(11, 319);
             this.datConnection.Name = "datConnection";
             this.datConnection.Size = new System.Drawing.Size(260, 26);
-            this.datConnection.TabIndex = 17;
+            this.datConnection.TabIndex = 5;
             // 
             // cobEndstation
             // 
-            this.cobEndstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobEndstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cobEndstation.FormattingEnabled = true;
             this.cobEndstation.Location = new System.Drawing.Point(11, 245);
             this.cobEndstation.Name = "cobEndstation";
-            this.cobEndstation.Size = new System.Drawing.Size(260, 47);
-            this.cobEndstation.TabIndex = 16;
+            this.cobEndstation.Size = new System.Drawing.Size(260, 39);
+            this.cobEndstation.TabIndex = 4;
+            this.cobEndstation.DropDown += new System.EventHandler(this.cobEndstation_DropDown);
             // 
             // lblEndStation
             // 
@@ -72,18 +74,19 @@
             this.lblEndStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndStation.Location = new System.Drawing.Point(7, 222);
             this.lblEndStation.Name = "lblEndStation";
-            this.lblEndStation.Size = new System.Drawing.Size(90, 20);
-            this.lblEndStation.TabIndex = 15;
-            this.lblEndStation.Text = "Endstation:";
+            this.lblEndStation.Size = new System.Drawing.Size(50, 20);
+            this.lblEndStation.TabIndex = 0;
+            this.lblEndStation.Text = "Nach:";
             // 
             // cobStartstation
             // 
-            this.cobStartstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cobStartstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cobStartstation.FormattingEnabled = true;
             this.cobStartstation.Location = new System.Drawing.Point(11, 157);
             this.cobStartstation.Name = "cobStartstation";
-            this.cobStartstation.Size = new System.Drawing.Size(260, 47);
-            this.cobStartstation.TabIndex = 14;
+            this.cobStartstation.Size = new System.Drawing.Size(260, 39);
+            this.cobStartstation.TabIndex = 3;
+            this.cobStartstation.DropDown += new System.EventHandler(this.cobStartstation_DropDown);
             // 
             // lblStartstation
             // 
@@ -91,9 +94,9 @@
             this.lblStartstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartstation.Location = new System.Drawing.Point(7, 134);
             this.lblStartstation.Name = "lblStartstation";
-            this.lblStartstation.Size = new System.Drawing.Size(96, 20);
-            this.lblStartstation.TabIndex = 13;
-            this.lblStartstation.Text = "Startstation:";
+            this.lblStartstation.Size = new System.Drawing.Size(42, 20);
+            this.lblStartstation.TabIndex = 0;
+            this.lblStartstation.Text = "Von:";
             // 
             // libConnection
             // 
@@ -111,9 +114,10 @@
             this.btnConnectionboard.Location = new System.Drawing.Point(143, 90);
             this.btnConnectionboard.Name = "btnConnectionboard";
             this.btnConnectionboard.Size = new System.Drawing.Size(150, 27);
-            this.btnConnectionboard.TabIndex = 11;
-            this.btnConnectionboard.Text = "Connectionboard";
+            this.btnConnectionboard.TabIndex = 2;
+            this.btnConnectionboard.Text = "Anzeigetafel";
             this.btnConnectionboard.UseVisualStyleBackColor = true;
+            this.btnConnectionboard.Click += new System.EventHandler(this.btnConnectionboard_Click);
             // 
             // btnConnection
             // 
@@ -121,11 +125,12 @@
             this.btnConnection.Location = new System.Drawing.Point(-5, 90);
             this.btnConnection.Name = "btnConnection";
             this.btnConnection.Size = new System.Drawing.Size(150, 27);
-            this.btnConnection.TabIndex = 10;
-            this.btnConnection.Text = "Connection";
+            this.btnConnection.TabIndex = 1;
+            this.btnConnection.Text = "Verbindungen";
             this.btnConnection.UseVisualStyleBackColor = true;
+            this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
             // 
-            // Connection
+            // Verbindung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +144,7 @@
             this.Controls.Add(this.libConnection);
             this.Controls.Add(this.btnConnectionboard);
             this.Controls.Add(this.btnConnection);
-            this.Name = "Connection";
+            this.Name = "Verbindung";
             this.Text = "Connection";
             this.ResumeLayout(false);
             this.PerformLayout();
