@@ -1,6 +1,6 @@
 ﻿namespace TransportApp
 {
-    partial class Verbindung
+    partial class GUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.btnSearch = new System.Windows.Forms.Button();
             this.cobEndstation = new System.Windows.Forms.ComboBox();
-            this.lblEndStation = new System.Windows.Forms.Label();
+            this.lblEndstation = new System.Windows.Forms.Label();
             this.cobStartstation = new System.Windows.Forms.ComboBox();
             this.lblStartstation = new System.Windows.Forms.Label();
             this.libConnection = new System.Windows.Forms.ListBox();
@@ -59,15 +60,15 @@
             this.cobEndstation.TabIndex = 4;
             this.cobEndstation.DropDown += new System.EventHandler(this.cobEndstation_DropDown);
             // 
-            // lblEndStation
+            // lblEndstation
             // 
-            this.lblEndStation.AutoSize = true;
-            this.lblEndStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndStation.Location = new System.Drawing.Point(7, 222);
-            this.lblEndStation.Name = "lblEndStation";
-            this.lblEndStation.Size = new System.Drawing.Size(50, 20);
-            this.lblEndStation.TabIndex = 0;
-            this.lblEndStation.Text = "Nach:";
+            this.lblEndstation.AutoSize = true;
+            this.lblEndstation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndstation.Location = new System.Drawing.Point(7, 222);
+            this.lblEndstation.Name = "lblEndstation";
+            this.lblEndstation.Size = new System.Drawing.Size(50, 20);
+            this.lblEndstation.TabIndex = 0;
+            this.lblEndstation.Text = "Nach:";
             // 
             // cobStartstation
             // 
@@ -78,7 +79,6 @@
             this.cobStartstation.Size = new System.Drawing.Size(260, 39);
             this.cobStartstation.TabIndex = 3;
             this.cobStartstation.DropDown += new System.EventHandler(this.cobStartstation_DropDown);
-            this.cobStartstation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cobStartstation_KeyDown);
             // 
             // lblStartstation
             // 
@@ -97,7 +97,7 @@
             this.libConnection.ItemHeight = 42;
             this.libConnection.Location = new System.Drawing.Point(290, 90);
             this.libConnection.Name = "libConnection";
-            this.libConnection.Size = new System.Drawing.Size(489, 340);
+            this.libConnection.Size = new System.Drawing.Size(594, 340);
             this.libConnection.TabIndex = 12;
             // 
             // btnConnectionboard
@@ -122,21 +122,22 @@
             this.btnConnection.UseVisualStyleBackColor = true;
             this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
             // 
-            // Verbindung
+            // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 431);
+            this.ClientSize = new System.Drawing.Size(884, 431);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cobEndstation);
-            this.Controls.Add(this.lblEndStation);
+            this.Controls.Add(this.lblEndstation);
             this.Controls.Add(this.cobStartstation);
             this.Controls.Add(this.lblStartstation);
             this.Controls.Add(this.libConnection);
             this.Controls.Add(this.btnConnectionboard);
             this.Controls.Add(this.btnConnection);
-            this.Name = "Verbindung";
-            this.Text = "Connection";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "GUI";
+            this.Text = "Transport App";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,7 +147,7 @@
 
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cobEndstation;
-        private System.Windows.Forms.Label lblEndStation;
+        private System.Windows.Forms.Label lblEndstation;
         private System.Windows.Forms.ComboBox cobStartstation;
         private System.Windows.Forms.Label lblStartstation;
         private System.Windows.Forms.ListBox libConnection;

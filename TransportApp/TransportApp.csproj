@@ -46,25 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Verbindung.cs">
+    <Compile Include="Connection.cs" />
+    <Compile Include="Connectionboard.cs" />
+    <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Verbindung.Designer.cs">
-      <DependentUpon>Verbindung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Anzeigetafel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Anzeigetafel.Designer.cs">
-      <DependentUpon>Anzeigetafel.cs</DependentUpon>
+    <Compile Include="GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Verbindung.resx">
-      <DependentUpon>Verbindung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Anzeigetafel.resx">
-      <DependentUpon>Anzeigetafel.cs</DependentUpon>
+    <Compile Include="Station.cs" />
+    <EmbeddedResource Include="GUI.resx">
+      <DependentUpon>GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
