@@ -1,6 +1,5 @@
-# modul-318-Student
+#module-318-project
 
-Students!
-Fork this repository to your own Github account. Work there with this repository. The intructor will clone your repo for inspection and evaluation.
+In this repository you will find my porject form the module 318.
 
-Have Fun!
+For more information read the document "Dokumentation_M318.docx".
