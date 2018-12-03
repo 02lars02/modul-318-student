@@ -31,10 +31,18 @@ namespace SwissTransport
 
             if (responseStream != null)
             {
-                var readToEnd = new StreamReader(responseStream).ReadToEnd();
-                var stationboard =
-                    JsonConvert.DeserializeObject<StationBoardRoot>(readToEnd);
-                return stationboard;
+                try
+                {
+                    var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                    var stationboard =
+                        JsonConvert.DeserializeObject<StationBoardRoot>(readToEnd);
+                    return stationboard;
+                }
+                catch(JsonSerializationException)
+                {
+                    //if it can't be serialized it will return null
+                    return null;
+                }
             }
 
             return null;
@@ -45,12 +53,19 @@ namespace SwissTransport
             var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStattion);
             var response = request.GetResponse();
             var responseStream = response.GetResponseStream();
-
-            if (responseStream != null)
+            try
+            { 
+                if (responseStream != null)
+                {
+                    var readToEnd = new StreamReader(responseStream).ReadToEnd();
+                    var connections = JsonConvert.DeserializeObject<Connections>(readToEnd);
+                    return connections;
+                }
+            }
+            catch(JsonSerializationException)
             {
-                var readToEnd = new StreamReader(responseStream).ReadToEnd();
-                var connections = JsonConvert.DeserializeObject<Connections>(readToEnd);
-                return connections;
+                //if it can't be serialized it will return null
+                return null;
             }
 
             return null;
