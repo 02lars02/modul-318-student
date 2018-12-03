@@ -61,6 +61,7 @@
             this.cobEndstation.Size = new System.Drawing.Size(260, 39);
             this.cobEndstation.TabIndex = 4;
             this.cobEndstation.DropDown += new System.EventHandler(this.cobEndstation_DropDown);
+            this.cobEndstation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cobEndstation_KeyDown);
             // 
             // lblEndstation
             // 
@@ -81,6 +82,7 @@
             this.cobStartstation.Size = new System.Drawing.Size(260, 39);
             this.cobStartstation.TabIndex = 3;
             this.cobStartstation.DropDown += new System.EventHandler(this.cobStartstation_DropDown);
+            this.cobStartstation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cobStartstation_KeyDown);
             // 
             // lblStartstation
             // 
@@ -101,6 +103,7 @@
             this.libConnection.Name = "libConnection";
             this.libConnection.Size = new System.Drawing.Size(594, 340);
             this.libConnection.TabIndex = 8;
+            this.libConnection.KeyDown += new System.Windows.Forms.KeyEventHandler(this.libConnection_KeyDown);
             // 
             // btnConnectionboard
             // 

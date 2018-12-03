@@ -10,6 +10,8 @@ namespace TransportApp
     {
         //boolean used to check to search for Connection or Connectionboard
         Boolean searchingForConnection = true;
+        //boolean used for autocompletion to know in which combobox the autocompleted text should be set
+        Boolean isStartstationSelected = true;
 
         public GUI()
         {
@@ -148,6 +150,81 @@ namespace TransportApp
                 MessageBox.Show("Es konnte keine Abfrage gemacht werden.\n" +
                     "Bitte versichern Sie sich das Sie mit einem Netzwerk verbunden sind.\n" +
                     "Zudem können Sie nur Tausend Abfragen pro Tag und pro IP-Adresse machen.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cobStartstation_KeyDown(object sender, KeyEventArgs e)
+        {
+            //needed for autocompletion (libConnection_KeyDown)
+            isStartstationSelected = true;
+
+            if(cobStartstation.Text.Length >= 3)
+            {
+                List<string> stationnames = new List<string>();
+                Station station = new Station();
+
+                //Remove old items from last search
+                libConnection.Items.Clear();
+
+                stationnames = station.GetStationNameSuggestion(cobStartstation.Text);
+                try
+                {
+                    foreach (string stationname in stationnames)
+                    {
+                        libConnection.Items.Add(stationname);
+                    }
+                }
+                catch (ArgumentNullException)
+                {
+                    /*throws ArgumentNullException when User made type mistake,
+                    but the programm can handel it, but the exception has to be cathched*/
+                }
+            }
+        }
+
+        private void cobEndstation_KeyDown(object sender, KeyEventArgs e)
+        {
+            //needed for autocompletion (libConnection_KeyDown)
+            isStartstationSelected = false;
+
+            if (cobEndstation.Text.Length >= 3)
+            {
+                List<string> stationnames = new List<string>();
+                Station station = new Station();
+
+                //Remove old items from last search
+                libConnection.Items.Clear();
+
+                stationnames = station.GetStationNameSuggestion(cobEndstation.Text);
+                try
+                {
+                    foreach (string stationname in stationnames)
+                    {
+                        libConnection.Items.Add(stationname);
+                    }
+                }
+                catch (ArgumentNullException)
+                {
+                    /*throws ArgumentNullException when User made type mistake,
+                    but the programm can handel it, but the exception has to be cathched*/
+                }
+            }
+        }
+
+        private void libConnection_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(isStartstationSelected)
+                {
+                    //write Text from selected item in listbox in combobox Startstation
+                    cobStartstation.Text = libConnection.Text;
+                }
+                else
+                {
+                    //write Text from selected item in listbox in combobox Endstation
+                    cobEndstation.Text = libConnection.Text;
+                }
             }
         }
 
