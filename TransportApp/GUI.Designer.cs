@@ -47,7 +47,7 @@
             this.btnSearch.Location = new System.Drawing.Point(11, 396);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 23);
-            this.btnSearch.TabIndex = 6;
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -100,7 +100,7 @@
             this.libConnection.Location = new System.Drawing.Point(290, 90);
             this.libConnection.Name = "libConnection";
             this.libConnection.Size = new System.Drawing.Size(594, 340);
-            this.libConnection.TabIndex = 12;
+            this.libConnection.TabIndex = 8;
             // 
             // btnConnectionboard
             // 
@@ -130,7 +130,7 @@
             this.dtpDate.Location = new System.Drawing.Point(12, 302);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(260, 26);
-            this.dtpDate.TabIndex = 13;
+            this.dtpDate.TabIndex = 5;
             // 
             // dtpTime
             // 
@@ -139,7 +139,7 @@
             this.dtpTime.Location = new System.Drawing.Point(87, 346);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(110, 29);
-            this.dtpTime.TabIndex = 14;
+            this.dtpTime.TabIndex = 6;
             // 
             // GUI
             // 
