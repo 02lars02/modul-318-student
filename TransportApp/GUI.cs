@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,39 +111,48 @@ namespace TransportApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (searchingForConnection)
+            try
             {
-                Connection connections = new Connection();
-                List<string> connectionList = new List<string>();
-
-                //Remove old items from last search
-                libConnection.Items.Clear();
-
-                connectionList = connections.GetConnections(cobStartstation.Text, cobEndstation.Text, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("HH:mm"));
-                foreach (string conection in connectionList)
+                if (searchingForConnection)
                 {
-                    libConnection.Items.Add(conection);
+                    Connection connections = new Connection();
+                    List<string> connectionList = new List<string>();
+
+                    //Remove old items from last search
+                    libConnection.Items.Clear();
+
+                    connectionList = connections.GetConnections(cobStartstation.Text, cobEndstation.Text, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("HH:mm"));
+                    foreach (string conection in connectionList)
+                    {
+                        libConnection.Items.Add(conection);
+                    }
+                }
+                else
+                {
+                    Connectionboard connectionboard = new Connectionboard();
+                    List<string> connectionboardList = new List<string>();
+                    //just nedded to get station with all informationen
+                    Station s = new Station();
+                    SwissTransport.Station station;
+
+                    station = s.GetStation(cobStartstation.Text);
+
+                    connectionboardList = connectionboard.GetConnectionboard(station);
+
+                    //Remove old items from last search
+                    libConnection.Items.Clear();
+
+                    foreach (string connection in connectionboardList)
+                    {
+                        libConnection.Items.Add(connection);
+                    }
                 }
             }
-            else
+            catch(WebException)
             {
-                Connectionboard connectionboard = new Connectionboard();
-                List<string> connectionboardList = new List<string>();
-                //just nedded to get station with all informationen
-                Station s = new Station();
-                SwissTransport.Station station;
-
-                station = s.GetStation(cobStartstation.Text);
-
-                connectionboardList = connectionboard.GetConnectionboard(station);
-
-                //Remove old items from last search
-                libConnection.Items.Clear();
-
-                foreach (string connection in connectionboardList)
-                {
-                    libConnection.Items.Add(connection);
-                }
+                MessageBox.Show("Es konnte keine Abfrage gemacht werden.\n" +
+                    "Bitte versichern Sie sich das Sie mit einem Netzwerk verbunden sind.\n" +
+                    "Zudem können Sie nur Tausend Abfragen pro Tag machen.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
