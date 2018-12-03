@@ -152,7 +152,7 @@ namespace TransportApp
             {
                 MessageBox.Show("Es konnte keine Abfrage gemacht werden.\n" +
                     "Bitte versichern Sie sich das Sie mit einem Netzwerk verbunden sind.\n" +
-                    "Zudem können Sie nur Tausend Abfragen pro Tag machen.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "Zudem können Sie nur Tausend Abfragen pro Tag und pro IP-Adresse machen.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
