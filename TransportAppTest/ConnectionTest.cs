@@ -56,5 +56,22 @@ namespace TransportAppTest
             //assert
             CollectionAssert.AreEqual(connectionList, output);
         }
+
+        [TestMethod]
+        public void twoCorrectStationAndADateFarBehindToday_getConnections_noInformationForThisDate()
+        {
+            //arrange
+            Connection connection = new Connection();
+            List<string> output = new List<string>();
+
+            //act
+            List<string> connectionList = connection.GetConnections("Sursee", "Luzern", "2006-12-13", "16:30");
+
+            output.Add("Zu diesem Datum konnten keine");
+            output.Add("Informationen gefunden werden.");
+
+            //assert
+            CollectionAssert.AreEqual(connectionList, output);
+        }
     }
 }

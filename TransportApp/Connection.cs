@@ -25,28 +25,38 @@ namespace TransportApp
                     //could return null!
                     connections = transport.GetConnections(startStation, endStation, date, time).ConnectionList;
 
-                    //shwos in list box firts which connection it is
-                    output.Add("Von: " + connections.First().From.Station.Name);
-                    output.Add("Bis: " + connections.First().To.Station.Name);
-
-                    foreach (SwissTransport.Connection connection in connections)
+                    //When Time is to far back, the API won't send items
+                    if (connections.Count() == 0)
                     {
-                        //Substrings the String so, that only hh:mm will be shown
-                        string departureTime = connection.From.Departure.Substring(11, 5);
-                        string arrivalTime = connection.To.Arrival.Substring(11, 5);
+                        //two output, so it will shown on two lines
+                        output.Add("Zu diesem Datum konnten keine");
+                        output.Add("Informationen gefunden werden.");
+                    }
+                    else
+                    {
+                        //shwos in list box firts which connection it is
+                        output.Add("Von: " + startStation);
+                        output.Add("Bis: " + endStation);
 
-                        //platform could be null !!!
-                        string platform;
-                        if (connection.From.Platform == null)
+                        foreach (SwissTransport.Connection connection in connections)
                         {
-                            platform = "Keine Angaben";
-                        }
-                        else
-                        {
-                            platform = "Gleis " + connection.From.Platform;
-                        }
+                            //Substrings the String so, that only hh:mm will be shown
+                            string departureTime = connection.From.Departure.Substring(11, 5);
+                            string arrivalTime = connection.To.Arrival.Substring(11, 5);
 
-                        output.Add(departureTime + "-" + arrivalTime + " " + platform);
+                            //platform could be null !!!
+                            string platform;
+                            if (connection.From.Platform == null)
+                            {
+                                platform = "Keine Angaben";
+                            }
+                            else
+                            {
+                                platform = "Gleis " + connection.From.Platform;
+                            }
+
+                            output.Add(departureTime + "-" + arrivalTime + " " + platform);
+                        }
                     }
                 }
                 catch (NullReferenceException)
