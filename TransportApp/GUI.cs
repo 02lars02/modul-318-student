@@ -30,6 +30,7 @@ namespace TransportApp
             dtpTime.ShowUpDown = true;
         }
 
+        //when the button "Verbindungen" be pressed, all the elements needed will be activated
         private void btnConnection_Click(object sender, EventArgs e)
         {
             //change label Text
@@ -45,6 +46,7 @@ namespace TransportApp
             clearBoxes();
         }
 
+        //when the button "Verbindungen" be pressed, all the elements needed will be activated and disabled unused
         private void btnConnectionboard_Click(object sender, EventArgs e)
         {
             //change label Text
@@ -60,10 +62,21 @@ namespace TransportApp
             clearBoxes();
         }
 
+        /// <summary>
+        /// resets all GUI components with text in it
+        /// </summary>
+        private void clearBoxes()
+        {
+            txtStartstation.Text = "";
+            txtEndstation.Text = "";
+            libConnection.Items.Clear();
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
+                //searching for connection or searching for connectionboard
                 if (searchingForConnection)
                 {
                     Connection connections = new Connection();
@@ -140,6 +153,7 @@ namespace TransportApp
                     but the programm can handel it, but the exception has to be cathched*/
                 }
             }
+            //switch to listbox
             if (e.KeyCode == Keys.Enter)
             {
                 libConnection.Focus();
@@ -180,6 +194,7 @@ namespace TransportApp
                     but the programm can handel it, but the exception has to be cathched*/
                 }
             }
+            //switch to listbox
             if (e.KeyCode == Keys.Enter)
             {
                 libConnection.Focus();
@@ -202,16 +217,6 @@ namespace TransportApp
                     txtEndstation.Text = libConnection.Text;
                 }
             }
-        }
-
-        /// <summary>
-        /// resets all GUI components with text in it
-        /// </summary>
-        private void clearBoxes()
-        {
-            txtStartstation.Text = "";
-            txtEndstation.Text = "";
-            libConnection.Items.Clear();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace TransportApp
         public List<string> GetConnections(string startStation, string endStation, string date, string time)
         {
             List<string> output = new List<string>();
-            //just needed to check station
             Station s = new Station();
 
             //check if the Station is valid
@@ -34,7 +33,7 @@ namespace TransportApp
                     }
                     else
                     {
-                        //shwos in list box firts which connection it is
+                        //shwos in list box first which connection it is
                         output.Add("Von: " + startStation);
                         output.Add("Bis: " + endStation);
 

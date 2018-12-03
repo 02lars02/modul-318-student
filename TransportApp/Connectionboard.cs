@@ -16,7 +16,7 @@ namespace TransportApp
             {
                 //could return null!
                 connectionboard = transport.GetStationBoard(station.Name, station.Id);
-                //shows Stationname first in listbox
+                //shows Stationname first in the listbox
                 output.Add(station.Name);
 
                 foreach (StationBoard connection in connectionboard.Entries)
@@ -28,7 +28,7 @@ namespace TransportApp
                     string platform;
                     if (connection.Stop.Platform == null)
                     {
-                        //will not show a platform, because most it has only one
+                        //will not show a platform, because at the most station with this information it has only one
                         platform = "";
                     }
                     else
