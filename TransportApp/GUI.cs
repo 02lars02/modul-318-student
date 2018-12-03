@@ -36,7 +36,7 @@ namespace TransportApp
             lblStartstation.Text = "Von:";
             lblEndstation.Text = "Nach:";
             //Enable second combobox and dateTimePickers
-            cobEndstation.Enabled = true;
+            txtEndstation.Enabled = true;
             dtpDate.Enabled = true;
             dtpTime.Enabled = true;
             //set boolean
@@ -51,59 +51,13 @@ namespace TransportApp
             lblStartstation.Text = "Station:";
             lblEndstation.Text = "";    //User won't see label any more
             //Disabel second combobox and dateTimePickers
-            cobEndstation.Enabled = false;
+            txtEndstation.Enabled = false;
             dtpDate.Enabled = false;
             dtpTime.Enabled = false;
             //set boolean
             searchingForConnection = false;
 
             clearBoxes();
-        }
-
-        private void cobStartstation_DropDown(object sender, EventArgs e)
-        {
-            List<string> stationnames = new List<string>();
-            Station station = new Station();
-
-            //Remove old items from last search
-            cobStartstation.Items.Clear();
-
-            stationnames = station.GetStationNameSuggestion(cobStartstation.Text);
-            try
-            {
-                foreach (string stationname in stationnames)
-                {
-                    cobStartstation.Items.Add(stationname);
-                }
-            }
-            catch(ArgumentNullException)
-            {
-                /*throws ArgumentNullException when User made type mistake,
-                but the programm can handel it, but the exception has to be cathched*/
-            }
-        }
-
-        private void cobEndstation_DropDown(object sender, EventArgs e)
-        {
-            List<string> stationnames = new List<string>();
-            Station station = new Station();
-
-            //Remove old items from last search
-            cobEndstation.Items.Clear();
-
-            stationnames = station.GetStationNameSuggestion(cobEndstation.Text);
-            try
-            {
-                foreach (string stationname in stationnames)
-                {
-                    cobEndstation.Items.Add(stationname);
-                }
-            }
-            catch (ArgumentNullException)
-            {
-                /*throws ArgumentNullException when User made type mistake,
-                but the programm can handel it, but the exception has to be cathched*/
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -118,7 +72,7 @@ namespace TransportApp
                     //Remove old items from last search
                     libConnection.Items.Clear();
 
-                    connectionList = connections.GetConnections(cobStartstation.Text, cobEndstation.Text, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("HH:mm"));
+                    connectionList = connections.GetConnections(txtStartstation.Text, txtEndstation.Text, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("HH:mm"));
                     foreach (string conection in connectionList)
                     {
                         libConnection.Items.Add(conection);
@@ -132,7 +86,7 @@ namespace TransportApp
                     Station s = new Station();
                     SwissTransport.Station station;
 
-                    station = s.GetStation(cobStartstation.Text);
+                    station = s.GetStation(txtStartstation.Text);
 
                     connectionboardList = connectionboard.GetConnectionboard(station);
 
@@ -153,12 +107,12 @@ namespace TransportApp
             }
         }
 
-        private void cobStartstation_KeyDown(object sender, KeyEventArgs e)
+        private void txtStartstation_KeyDown(object sender, KeyEventArgs e)
         {
             //needed for autocompletion (libConnection_KeyDown)
             isStartstationSelected = true;
 
-            if(cobStartstation.Text.Length >= 3)
+            if (txtStartstation.Text.Length >= 3)
             {
                 List<string> stationnames = new List<string>();
                 Station station = new Station();
@@ -166,12 +120,18 @@ namespace TransportApp
                 //Remove old items from last search
                 libConnection.Items.Clear();
 
-                stationnames = station.GetStationNameSuggestion(cobStartstation.Text);
+                stationnames = station.GetStationNameSuggestion(txtStartstation.Text);
                 try
                 {
                     foreach (string stationname in stationnames)
                     {
                         libConnection.Items.Add(stationname);
+                    }
+
+                    //when it is empty, this message will be shown
+                    if (libConnection.Items.Count == 0)
+                    {
+                        libConnection.Items.Add("Keine Übereinstimmung");
                     }
                 }
                 catch (ArgumentNullException)
@@ -187,12 +147,12 @@ namespace TransportApp
             }
         }
 
-        private void cobEndstation_KeyDown(object sender, KeyEventArgs e)
+        private void txtEndstation_KeyDown(object sender, KeyEventArgs e)
         {
             //needed for autocompletion (libConnection_KeyDown)
             isStartstationSelected = false;
 
-            if (cobEndstation.Text.Length >= 3)
+            if (txtEndstation.Text.Length >= 3)
             {
                 List<string> stationnames = new List<string>();
                 Station station = new Station();
@@ -200,12 +160,18 @@ namespace TransportApp
                 //Remove old items from last search
                 libConnection.Items.Clear();
 
-                stationnames = station.GetStationNameSuggestion(cobEndstation.Text);
+                stationnames = station.GetStationNameSuggestion(txtEndstation.Text);
                 try
                 {
                     foreach (string stationname in stationnames)
                     {
                         libConnection.Items.Add(stationname);
+                    }
+
+                    //when it is empty, this message will be shown
+                    if (libConnection.Items.Count == 0)
+                    {
+                        libConnection.Items.Add("Keine Übereinstimmung");
                     }
                 }
                 catch (ArgumentNullException)
@@ -228,12 +194,12 @@ namespace TransportApp
                 if(isStartstationSelected)
                 {
                     //write Text from selected item in listbox in combobox Startstation
-                    cobStartstation.Text = libConnection.Text;
+                    txtStartstation.Text = libConnection.Text;
                 }
                 else
                 {
                     //write Text from selected item in listbox in combobox Endstation
-                    cobEndstation.Text = libConnection.Text;
+                    txtEndstation.Text = libConnection.Text;
                 }
             }
         }
@@ -243,10 +209,8 @@ namespace TransportApp
         /// </summary>
         private void clearBoxes()
         {
-            cobStartstation.Items.Clear();
-            cobStartstation.Text = "";
-            cobEndstation.Items.Clear();
-            cobEndstation.Text = "";
+            txtStartstation.Text = "";
+            txtEndstation.Text = "";
             libConnection.Items.Clear();
         }
     }
