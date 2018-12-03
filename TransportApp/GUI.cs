@@ -180,6 +180,11 @@ namespace TransportApp
                     but the programm can handel it, but the exception has to be cathched*/
                 }
             }
+            if (e.KeyCode == Keys.Enter)
+            {
+                libConnection.Focus();
+                libConnection.SetSelected(0, true);
+            }
         }
 
         private void cobEndstation_KeyDown(object sender, KeyEventArgs e)
@@ -208,6 +213,11 @@ namespace TransportApp
                     /*throws ArgumentNullException when User made type mistake,
                     but the programm can handel it, but the exception has to be cathched*/
                 }
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                libConnection.Focus();
+                libConnection.SetSelected(0, true);
             }
         }
 
