@@ -37,12 +37,14 @@
             this.libConnection = new System.Windows.Forms.ListBox();
             this.btnConnectionboard = new System.Windows.Forms.Button();
             this.btnConnection = new System.Windows.Forms.Button();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(11, 372);
+            this.btnSearch.Location = new System.Drawing.Point(11, 396);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(260, 23);
             this.btnSearch.TabIndex = 6;
@@ -122,11 +124,30 @@
             this.btnConnection.UseVisualStyleBackColor = true;
             this.btnConnection.Click += new System.EventHandler(this.btnConnection_Click);
             // 
+            // dtpDate
+            // 
+            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Location = new System.Drawing.Point(12, 302);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(260, 26);
+            this.dtpDate.TabIndex = 13;
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(87, 346);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(110, 29);
+            this.dtpTime.TabIndex = 14;
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 431);
+            this.Controls.Add(this.dtpTime);
+            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cobEndstation);
             this.Controls.Add(this.lblEndstation);
@@ -153,5 +174,7 @@
         private System.Windows.Forms.ListBox libConnection;
         private System.Windows.Forms.Button btnConnectionboard;
         private System.Windows.Forms.Button btnConnection;
+        private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.DateTimePicker dtpTime;
     }
 }

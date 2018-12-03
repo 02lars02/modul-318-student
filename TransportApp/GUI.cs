@@ -25,6 +25,11 @@ namespace TransportApp
             //size should not be changed by user
             this.MaximumSize = new Size(900, 470);
             this.MinimumSize = new Size(900, 470);
+
+            //make dtpTime only allow to take time in format HH:mm
+            dtpTime.Format = DateTimePickerFormat.Custom;
+            dtpTime.CustomFormat = "HH:mm";
+            dtpTime.ShowUpDown = true;
         }
 
         private void btnConnection_Click(object sender, EventArgs e)
@@ -32,8 +37,10 @@ namespace TransportApp
             //change label Text
             lblStartstation.Text = "Von:";
             lblEndstation.Text = "Nach:";
-            //Enable second combobox
+            //Enable second combobox and dateTimePickers
             cobEndstation.Enabled = true;
+            dtpDate.Enabled = true;
+            dtpTime.Enabled = true;
             //set boolean
             searchingForConnection = true;
 
@@ -45,8 +52,10 @@ namespace TransportApp
             //change label Text
             lblStartstation.Text = "Station:";
             lblEndstation.Text = "";    //User won't see label any more
-            //Enable second combobox
+            //Disabel second combobox and dateTimePickers
             cobEndstation.Enabled = false;
+            dtpDate.Enabled = false;
+            dtpTime.Enabled = false;
             //set boolean
             searchingForConnection = false;
 
@@ -109,7 +118,7 @@ namespace TransportApp
                 //Remove old items from last search
                 libConnection.Items.Clear();
 
-                connectionList = connections.GetConnections(cobStartstation.Text, cobEndstation.Text);
+                connectionList = connections.GetConnections(cobStartstation.Text, cobEndstation.Text, dtpDate.Value.ToString("yyyy-MM-dd"), dtpTime.Value.ToString("HH:mm"));
                 foreach (string conection in connectionList)
                 {
                     libConnection.Items.Add(conection);

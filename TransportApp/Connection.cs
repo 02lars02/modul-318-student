@@ -8,7 +8,7 @@ namespace TransportApp
 {
     public class Connection
     {
-        public List<string> GetConnections(string startStation, string endStation)
+        public List<string> GetConnections(string startStation, string endStation, string date, string time)
         {
             List<string> output = new List<string>();
             //just needed to check station
@@ -23,7 +23,7 @@ namespace TransportApp
                     List<SwissTransport.Connection> connections = new List<SwissTransport.Connection>();
 
                     //could return null!
-                    connections = transport.GetConnections(startStation, endStation).ConnectionList;
+                    connections = transport.GetConnections(startStation, endStation, date, time).ConnectionList;
 
                     //shwos in list box firts which connection it is
                     output.Add("Von: " + connections.First().From.Station.Name);

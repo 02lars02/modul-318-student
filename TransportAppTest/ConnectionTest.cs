@@ -15,7 +15,7 @@ namespace TransportAppTest
             Connection connection = new Connection();
 
             //act
-            List<string> connectionList = connection.GetConnections("Sursee", "Luzern");
+            List<string> connectionList = connection.GetConnections("Sursee", "Luzern", "2018-12-13", "16:30");
 
             //assert
             Assert.IsNotNull(connectionList);
@@ -29,7 +29,7 @@ namespace TransportAppTest
             List<string> output = new List<string>();
 
             //act
-            List<string> connectionList = connection.GetConnections("Sursee", "sdadadad");
+            List<string> connectionList = connection.GetConnections("Sursee", "sdadadad", "2018-12-13", "16:30");
 
             output.Add("Eine ihrer eingegebenen");
             output.Add("Station existiert nicht.");
@@ -48,7 +48,7 @@ namespace TransportAppTest
             List<string> output = new List<string>();
 
             //act
-            List<string> connectionList = connection.GetConnections("Sursee", "Sursee, Surentalstr. 10");
+            List<string> connectionList = connection.GetConnections("Sursee", "Sursee, Surentalstr. 10", "2018-12-13", "16:30");
 
             output.Add("Eine Station existiert nicht");
             output.Add("oder hat keine Verbindungen.");
