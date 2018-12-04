@@ -123,6 +123,14 @@ namespace TransportApp
                     "Bitte versichern Sie sich das Sie mit einem Netzwerk verbunden sind.\n" +
                     "Zudem können Sie nur Tausend Abfragen pro Tag und pro IP-Adresse machen.", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //when no elements are available to add to listbox this exception will be thrown
+            catch (NullReferenceException)
+            {
+                /*Will be shown as Information in the box,
+                two elements because it will be shown on two lines*/
+                libConnection.Items.Add("Ihre eingegebenen Station");
+                libConnection.Items.Add("existiert nicht.");
+            }
         }
 
         private void txtStartstation_KeyDown(object sender, KeyEventArgs e)
