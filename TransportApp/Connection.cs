@@ -8,6 +8,15 @@ namespace TransportApp
 {
     public class Connection
     {
+        /// <summary>
+        /// returns List of strings which you can print afterwards.
+        /// The list contains connections between start and end station by specified date and time
+        /// </summary>
+        /// <param name="startStation"></param>
+        /// <param name="endStation"></param>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
         public List<string> GetConnections(string startStation, string endStation, string date, string time)
         {
             List<string> output = new List<string>();

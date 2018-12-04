@@ -6,6 +6,12 @@ namespace TransportApp
 {
     public class Connectionboard
     {
+        /// <summary>
+        /// returns List of strings which you can print afterwards.
+        /// The list contains connections from start station from now
+        /// </summary>
+        /// <param name="station"></param>
+        /// <returns></returns>
         public List<string> GetConnectionboard(SwissTransport.Station station)
         {
             List<string> output = new List<string>();

@@ -8,6 +8,12 @@ namespace TransportApp
 {
     public class Station
     {
+        /// <summary>
+        /// returns List of strings which you can print afterwards.
+        /// The list contains stations name which are similare to the parameter string
+        /// </summary>
+        /// <param name="station"></param>
+        /// <returns></returns>
         public List<string> GetStationNameSuggestion(string station)
         {
             List<string> output = new List<string>();
