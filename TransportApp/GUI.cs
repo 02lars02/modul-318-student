@@ -138,7 +138,7 @@ namespace TransportApp
             //needed for autocompletion (libConnection_KeyDown)
             isStartstationSelected = true;
 
-            //will be activated after the fourth character was typed
+            //will be activated after the three character was typed
             if (txtStartstation.Text.Length >= 3)
             {
                 List<string> stationnames = new List<string>();
@@ -181,7 +181,7 @@ namespace TransportApp
             //needed for autocompletion (libConnection_KeyDown)
             isStartstationSelected = false;
 
-            //will be activated after the fourth character was typed
+            //will be activated after the three character was typed
             if (txtEndstation.Text.Length >= 3)
             {
                 List<string> stationnames = new List<string>();
