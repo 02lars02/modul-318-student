@@ -15,8 +15,20 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0E1A8BE0549195C4ABB9DA72682A5C64"
+        "OwnerKey" = "8:_826D76F51231463DA13D42330DE8C96D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_35AB1D019E96A2116E3ECFFFE8F0D3CE"
         "OwnerKey" = "8:_826D76F51231463DA13D42330DE8C96D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3ED676F3B1C7429895F049B3CB596453"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -34,25 +46,19 @@
         "Entry"
         {
         "MsmKey" = "8:_982BFA07FC83BE8EDDF5FD29B0F8ED76"
-        "OwnerKey" = "8:_D3A5F038F9DF2F709EC1D4D51720ABA3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D3A5F038F9DF2F709EC1D4D51720ABA3"
-        "OwnerKey" = "8:_826D76F51231463DA13D42330DE8C96D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E37B64F1985D48E5BBC6B927E7BBB56B"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0E1A8BE0549195C4ABB9DA72682A5C64"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_982BFA07FC83BE8EDDF5FD29B0F8ED76"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0E1A8BE0549195C4ABB9DA72682A5C64"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -65,12 +71,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_35AB1D019E96A2116E3ECFFFE8F0D3CE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D3A5F038F9DF2F709EC1D4D51720ABA3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -136,6 +136,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0E1A8BE0549195C4ABB9DA72682A5C64"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SwissTransport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0E1A8BE0549195C4ABB9DA72682A5C64"
+                    {
+                    "Name" = "8:SwissTransport.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SwissTransport.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_35AB1D019E96A2116E3ECFFFE8F0D3CE"
             {
             "AssemblyRegister" = "3:1"
@@ -167,6 +198,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3ED676F3B1C7429895F049B3CB596453"
+            {
+            "SourcePath" = "8:..\\train.ico"
+            "TargetName" = "8:train.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_982BFA07FC83BE8EDDF5FD29B0F8ED76"
             {
             "AssemblyRegister" = "3:1"
@@ -196,57 +247,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D3A5F038F9DF2F709EC1D4D51720ABA3"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SwissTransport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D3A5F038F9DF2F709EC1D4D51720ABA3"
-                    {
-                    "Name" = "8:SwissTransport.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SwissTransport.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E37B64F1985D48E5BBC6B927E7BBB56B"
-            {
-            "SourcePath" = "8:..\\Citycons_train_icon-icons.com_67910.ico"
-            "TargetName" = "8:Citycons_train_icon-icons.com_67910.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -317,7 +317,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TransportApp"
         "ProductCode" = "8:{59129837-14B4-482A-8A02-0AEA7042D4AF}"
-        "PackageCode" = "8:{5C136759-E681-4B10-ADBC-F7B733748FEE}"
+        "PackageCode" = "8:{C1A1CEC1-2B18-4F7B-BEEB-DE914900C4D5}"
         "UpgradeCode" = "8:{7CF50E0C-BAD1-44F5-95F3-A95F7C86A221}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -448,7 +448,7 @@
             "Target" = "8:_826D76F51231463DA13D42330DE8C96D"
             "Folder" = "8:_921A728486B740D8A3FE51DBA63041E1"
             "WorkingFolder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
-            "Icon" = "8:_E37B64F1985D48E5BBC6B927E7BBB56B"
+            "Icon" = "8:_3ED676F3B1C7429895F049B3CB596453"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_74F0574D6113451C9AC44E5715D8F74F"
@@ -462,7 +462,7 @@
             "Target" = "8:_826D76F51231463DA13D42330DE8C96D"
             "Folder" = "8:_EEDAA2BDCDAC4E37BE92B7AECB2894C5"
             "WorkingFolder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
-            "Icon" = "8:_E37B64F1985D48E5BBC6B927E7BBB56B"
+            "Icon" = "8:_3ED676F3B1C7429895F049B3CB596453"
             "Feature" = "8:"
             }
         }
@@ -866,7 +866,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_826D76F51231463DA13D42330DE8C96D"
             {
-            "SourcePath" = "8:..\\TransportApp\\obj\\Debug\\TransportApp.exe"
+            "SourcePath" = "8:..\\TransportApp\\obj\\Release\\TransportApp.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_10AAE00228FE4A6E9D6F3206F5773D72"
