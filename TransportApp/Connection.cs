@@ -34,7 +34,8 @@ namespace TransportApp
                     //When Time is to far back, the API won't send items
                     if (connections.Count() == 0)
                     {
-                        //two output, so it will shown on two lines
+                        /*Will be shown as Information in the box,
+                        two elements because it will be shown on two lines*/
                         output.Add("Zu diesem Datum konnten keine");
                         output.Add("Informationen gefunden werden.");
                     }
@@ -67,7 +68,8 @@ namespace TransportApp
                 }
                 catch (NullReferenceException)
                 {
-                    //two output, so it will shown on two lines
+                    /*Will be shown as Information in the box,
+                    two elements because it will be shown on two lines*/
                     output.Add("Eine Station existiert nicht");
                     output.Add("oder hat keine Verbindungen.");
                 }

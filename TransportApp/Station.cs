@@ -16,10 +16,10 @@ namespace TransportApp
         {
             List<string> output = new List<string>();
             SwissTransport.Transport transport = new SwissTransport.Transport();
-            List<SwissTransport.Station> stations = new List<SwissTransport.Station>();
+            List<SwissTransport.Station> transportStations = new List<SwissTransport.Station>();
 
-            stations = transport.GetStations(station).StationList;
-            foreach (SwissTransport.Station transportStation in stations)
+            transportStations = transport.GetStations(station).StationList;
+            foreach (SwissTransport.Station transportStation in transportStations)
             {
                 string stationname = transportStation.Name;
                 output.Add(stationname);
@@ -45,7 +45,7 @@ namespace TransportApp
         }
 
         /// <summary>
-        /// returns the station with the most similar text
+        /// returns the station with the most similarity to the text
         /// </summary>
         /// <param name="station"></param>
         public SwissTransport.Station GetStation(string station)

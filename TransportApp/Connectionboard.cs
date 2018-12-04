@@ -47,7 +47,8 @@ namespace TransportApp
             }
             catch(NullReferenceException)
             {
-                //two output, so it will shown on two lines
+                /*Will be shown as Information in the box,
+                two elements because it will be shown on two lines*/
                 output.Add("Diese Station existiert nicht");
                 output.Add("oder hat keine Verbindungen.");
             }
