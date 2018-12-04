@@ -167,7 +167,7 @@ namespace TransportApp
             isStartstationSelected = false;
 
             //will be activated after the fourth character was typed
-            if (txtEndstation.Text.Length > 3)
+            if (txtEndstation.Text.Length >= 3)
             {
                 List<string> stationnames = new List<string>();
                 Station station = new Station();
