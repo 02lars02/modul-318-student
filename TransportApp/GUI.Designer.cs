@@ -156,6 +156,7 @@
             this.Controls.Add(this.btnConnectionboard);
             this.Controls.Add(this.btnConnection);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GUI";
             this.Text = "Transport App";
             this.ResumeLayout(false);
