@@ -152,18 +152,19 @@ namespace TransportApp
                     {
                         libConnection.Items.Add("Keine Übereinstimmung");
                     }
+
+                    //switch to listbox
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        libConnection.Focus();
+                        libConnection.SetSelected(0, true);
+                    }
                 }
                 catch (ArgumentNullException)
                 {
                     /*throws ArgumentNullException when User made type mistake,
                     but the programm can handel it, but the exception has to be cathched*/
                 }
-            }
-            //switch to listbox
-            if (e.KeyCode == Keys.Enter)
-            {
-                libConnection.Focus();
-                libConnection.SetSelected(0, true);
             }
         }
 
@@ -194,18 +195,19 @@ namespace TransportApp
                     {
                         libConnection.Items.Add("Keine Übereinstimmung");
                     }
+
+                    //switch to listbox
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        libConnection.Focus();
+                        libConnection.SetSelected(0, true);
+                    }
                 }
                 catch (ArgumentNullException)
                 {
                     /*throws ArgumentNullException when User made type mistake,
                     but the programm can handel it, but the exception has to be cathched*/
                 }
-            }
-            //switch to listbox
-            if (e.KeyCode == Keys.Enter)
-            {
-                libConnection.Focus();
-                libConnection.SetSelected(0, true);
             }
         }
 
