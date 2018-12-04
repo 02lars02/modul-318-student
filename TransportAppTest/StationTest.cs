@@ -9,6 +9,9 @@ namespace TransportAppTest
     public class StationTest
     {
         List<string> listOfStationnameSursee = new List<string>();
+        /// <summary>
+        /// initalize the list of stations suggestion, when you search for "Sursee"
+        /// </summary>
         private void initalizeListOfStationnameSursee()
         {
             listOfStationnameSursee.Add("Sursee");
